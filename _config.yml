@@ -1,6 +1,6 @@
 # Setup
 title: Mari Schnabel
-url: https://marvfpv.github.io/
+url: https://marbelymarble.github.io/
 paginate: 1
 baseurl: ""
 permalink: pretty
@@ -35,7 +35,7 @@ sass:
 # Specify the author for blog posts
 author:
   name: Mari Schnabel
-  url: https://github.com/MarvFPV
+  url: https://github.com/marbelymarble
   email: marvfpv@gmail.com
 
 # Custom vars
