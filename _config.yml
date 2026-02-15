@@ -1,5 +1,5 @@
 # Setup
-title: Marvin Schnabel
+title: Mari Schnabel
 url: https://marvfpv.github.io/
 paginate: 1
 baseurl: ""
@@ -34,7 +34,7 @@ sass:
 
 # Specify the author for blog posts
 author:
-  name: Marvin Schnabel
+  name: Mari Schnabel
   url: https://github.com/MarvFPV
   email: marvfpv@gmail.com
 
