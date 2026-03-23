@@ -64,6 +64,6 @@ Luckily everything went well on the test flight and even though the heli has kis
 
 The project cost ended up at around 2x the price of a commercial flight control system, **but** i can argue that i got 5 FCs out of it. So if i ever end up building more helis, i'm prepared!
 
-Back in 2023 i still had plans of maybe finding a shop to sell this hardware but with how many (arguably better) commercial offerings are out there today i really don't see it making any sense. I decided to open source the project on [GitHub](https://github.com/MarvFPV/AccipiterF7) for people to adapt for their needs and play around with. 
+Back in 2023 i still had plans of maybe finding a shop to sell this hardware but with how many (arguably better) commercial offerings are out there today i really don't see it making any sense. I decided to open source the project on [GitHub](https://github.com/Marbelymarble/AccipiterF7) for people to adapt for their needs and play around with. 
 
 If you do end up creating something with it i'd love to hear about it on my [socials](https://mschnabel.com/about/), thanks for reading!

@@ -26,10 +26,10 @@
   --yellow: #fab005;
   --orange: #fd7e14;
 
-  --marv-brown: #918159;
-  --marv-white: #fffef8;
-  --marv-text: #445566;
-  --marv-code-bg: #f8f7f4;
+  --marble-brown: #918159;
+  --marble-white: #fffef8;
+  --marble-text: #445566;
+  --marble-code-bg: #f8f7f4;
 
 
   --blue-300: #74c0fc;
@@ -65,15 +65,15 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --body-color: var(--marv-text);
-    --body-bg: var(--marv-white);
+    --body-color: var(--marble-text);
+    --body-bg: var(--marble-white);
 
-    --heading-color: var(--marv-brown);
+    --heading-color: var(--marble-brown);
 
-    --link-color: var(--marv-brown);
-    --link-hover-color: var(--marv-brown);
+    --link-color: var(--marble-brown);
+    --link-hover-color: var(--marble-brown);
 
-    --border-color: var(--marv-brown);
+    --border-color: var(--marble-brown);
 
     --code-bg: var(--gray-900);
   }
@@ -92,11 +92,11 @@
 
 
 [data-theme="light"] {
-  --body-color: var(--marv-text);
-  --body-bg: var(--marv-white);
-  --heading-color: var(--marv-brown);
-  --link-color: var(--marv-brown);
-  --link-hover-color: var(--marv-brown);
-  --border-color: var(--marv-brown);
-  --code-bg: var(--marv-code-bg);
+  --body-color: var(--marble-text);
+  --body-bg: var(--marble-white);
+  --heading-color: var(--marble-brown);
+  --link-color: var(--marble-brown);
+  --link-hover-color: var(--marble-brown);
+  --border-color: var(--marble-brown);
+  --code-bg: var(--marble-code-bg);
 }
