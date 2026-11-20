@@ -10,7 +10,7 @@
 }
 
 .photo-gallery-item {
-  flex: var(--photo-ratio, 1.5) 1 calc(var(--photo-ratio, 1.5) * 12rem);
+  flex: var(--photo-ratio, 1.5) 1 calc(var(--photo-ratio, 1.5) * var(--photo-row-height, 12rem));
   min-width: 0;
   max-width: 100%;
   margin: 0;
@@ -110,6 +110,5 @@
 
 @media (max-width: 35em) {
   .photo-gallery { gap: .5rem; }
-  .photo-gallery-item { flex-basis: calc(var(--photo-ratio, 1.5) * 6rem); }
   .photo-viewer-navigation { flex-wrap: wrap; }
 }

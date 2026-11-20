@@ -1,6 +1,17 @@
 (() => {
   const gallery = document.querySelector('[data-photo-gallery]');
   if (!gallery) return;
+  let layoutWidth;
+  function resizeGallery() {
+    const width = gallery.clientWidth;
+    if (!width || width === layoutWidth) return;
+    layoutWidth = width;
+    gallery.style.setProperty('--photo-row-height', `${Math.max(80, Math.min(192, width / 3.2))}px`);
+  }
+  resizeGallery();
+  if (typeof ResizeObserver === 'function') new ResizeObserver(resizeGallery).observe(gallery);
+  else window.addEventListener('resize', resizeGallery);
+
   function sizePhoto(image) {
     if (image.tagName !== 'IMG' || !image.naturalWidth || !image.naturalHeight) return;
     const figure = image.closest('.photo-gallery-item');
