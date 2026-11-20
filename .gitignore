@@ -41,3 +41,34 @@ validation-report.json
 
 # Folders to ignore
 node_modules
+__pycache__/
+*.pyc
+
+AGENTS.md
+AGENTS.override.md
+CLAUDE.md
+CLAUDE.local.md
+GEMINI.md
+AI_CONTEXT.md
+.agents/
+.codex/
+.claude/
+.gemini/
+.cursor/
+.cursorrules
+.cursorignore
+.windsurf/
+.windsurfrules
+.aider*
+.continue/
+.copilot/
+.github/copilot-instructions.md
+.github/instructions/
+.github/prompts/
+.github/agents/
+.opencode/
+.roo/
+.roorules
+.cline/
+.clinerules/
+.openai/

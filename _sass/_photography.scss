@@ -1,0 +1,113 @@
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+  &::after {
+    content: "";
+    flex-grow: 999;
+  }
+}
+
+.photo-gallery-item {
+  flex: var(--photo-ratio, 1.5) 1 calc(var(--photo-ratio, 1.5) * 12rem);
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+}
+
+.photo-gallery-link {
+  display: block;
+  cursor: zoom-in;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+}
+
+.photo-gallery-caption {
+  padding-top: .5rem;
+  font-size: 1rem;
+
+  p { margin: .25rem 0; white-space: pre-line; }
+}
+
+.photo-gallery-more {
+  min-height: 44px;
+  padding: .5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font: inherit;
+  background: var(--body-bg);
+  color: var(--body-color);
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.photo-viewer-open { overflow: hidden; }
+
+.photo-viewer {
+  width: min(72rem, calc(100% - 2rem));
+  max-width: none;
+  max-height: calc(100dvh - 2rem);
+  padding: 1rem;
+  border: 0;
+  border-radius: var(--border-radius);
+  background: var(--body-bg);
+  color: var(--body-color);
+  overflow-y: auto;
+
+  &::backdrop { background: rgba(0, 0, 0, .88); }
+
+  button {
+    min-height: 44px;
+    padding: .5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font: inherit;
+    color: var(--body-color);
+    background: var(--body-bg);
+    cursor: pointer;
+  }
+
+  button:hover { background: var(--gray-200); }
+}
+
+.photo-gallery-link:focus-visible,
+.photo-viewer button:focus-visible,
+.photo-viewer a:focus-visible {
+  outline: 3px solid var(--link-color);
+  outline-offset: 4px;
+}
+
+.photo-viewer-toolbar,
+.photo-viewer-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.photo-viewer-toolbar { margin-bottom: 1rem; }
+.photo-viewer-navigation {
+  margin-top: 1rem;
+
+}
+
+.photo-viewer-image {
+  width: 100%;
+  height: min(65vh, 45rem);
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.photo-viewer-caption { white-space: pre-line; }
+.photo-viewer-error { margin-top: 1rem; }
+
+@media (max-width: 35em) {
+  .photo-gallery-item { flex: 0 0 100%; }
+  .photo-gallery::after { display: none; }
+  .photo-viewer-navigation { flex-wrap: wrap; }
+}

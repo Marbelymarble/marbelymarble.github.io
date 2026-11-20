@@ -1,0 +1,44 @@
+name: Sync Flickr album order
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - _config.yml
+      - scripts/sync-flickr.py
+      - .github/workflows/sync-flickr.yml
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: sync-flickr
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Sync album
+        run: python3 scripts/sync-flickr.py
+      - name: Update site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add _data/flickr_order.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Sync photo sequence from Flickr album'
+          git push
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds"

@@ -1,0 +1,68 @@
+---
+layout: page
+title: Photography
+permalink: /photography/
+description: Photographs by Mari Schnabel.
+---
+
+{% assign photos = site.data.photos %}
+{% assign flickr_enabled = false %}
+{% if site.flickr.user_id and site.flickr.user_id != "" and site.flickr.album_id and site.flickr.album_id != "" %}
+  {% assign flickr_enabled = true %}
+{% endif %}
+{% if photos.size > 0 or flickr_enabled %}
+<div class="photo-gallery" data-photo-gallery
+     {% if flickr_enabled %}
+     data-flickr-user="{{ site.flickr.user_id | escape }}"
+     data-flickr-album="{{ site.flickr.album_id | escape }}"
+     data-flickr-key="{{ site.flickr.api_key | escape }}"
+     data-flickr-order="{{ site.data.flickr_order.photo_ids | join: ',' | escape }}"
+     {% endif %}>
+  {% for photo in photos %}
+  <figure class="photo-gallery-item">
+    <a class="photo-gallery-link" href="{{ photo.image | escape }}"
+       data-photo
+       data-caption="{{ photo.caption | escape }}"
+       data-flickr="{{ photo.flickr | escape }}">
+      <img src="{{ photo.thumbnail | default: photo.image | escape }}"
+           alt="{{ photo.alt | escape }}" loading="lazy" decoding="async">
+    </a>
+    {% if photo.caption %}
+    <figcaption class="photo-gallery-caption">
+      <p>{{ photo.caption | escape | newline_to_br }}</p>
+    </figcaption>
+    {% endif %}
+  </figure>
+  {% endfor %}
+</div>
+
+{% if flickr_enabled %}
+<div class="photo-gallery-source">
+  <p data-flickr-status role="status">Loading photographs…</p>
+  <button type="button" class="photo-gallery-more" data-flickr-more hidden>Load more</button>
+  <noscript><p>Enable JavaScript to load the photographs.</p></noscript>
+</div>
+{% endif %}
+
+<dialog class="photo-viewer" aria-label="Photo viewer">
+  <div class="photo-viewer-toolbar">
+    <span data-photo-position aria-live="polite" aria-atomic="true"></span>
+    <button type="button" data-photo-close autofocus>Close</button>
+  </div>
+  <figure class="photo-viewer-figure">
+    <img class="photo-viewer-image" data-photo-image alt="">
+    <p class="photo-viewer-error" data-photo-error role="status" hidden>This photograph could not be loaded.</p>
+    <figcaption>
+      <p class="photo-viewer-caption" data-photo-caption hidden></p>
+    </figcaption>
+  </figure>
+  <div class="photo-viewer-navigation">
+    <button type="button" data-photo-previous>Previous</button>
+    <button type="button" data-photo-next>Next</button>
+  </div>
+</dialog>
+<script src="{{ '/assets/photography.js' | relative_url }}" defer></script>
+{% if flickr_enabled %}<script src="{{ '/assets/flickr-album.js' | relative_url }}" defer></script>{% endif %}
+{% else %}
+<p>Photographs coming soon.</p>
+{% endif %}

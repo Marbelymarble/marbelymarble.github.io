@@ -10,6 +10,7 @@ If you want to contact me, these are my socials:
 - Discord: [@marbelymarble](https://discordapp.com/users/marvfpv/)
 - Instagram: [@marblefpv](https://www.instagram.com/marvfpv/)
 - GitHub: [@marbelymarble](https://github.com/marbelymarble)
+- Flickr: [Mari Schnabel](https://www.flickr.com/photos/205180906@N06/)
 - Printables: [@Mari_237793](https://www.printables.com/@Mari_237793)
 - E-Mail: [marbelymarble@proton.me](mailto:marbelymarble@proton.me)
 
