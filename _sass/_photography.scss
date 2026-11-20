@@ -23,6 +23,8 @@
   img {
     width: 100%;
     height: auto;
+    aspect-ratio: var(--photo-ratio, 1.5);
+    object-fit: contain;
     margin: 0;
   }
 }
@@ -107,7 +109,7 @@
 .photo-viewer-error { margin-top: 1rem; }
 
 @media (max-width: 35em) {
-  .photo-gallery-item { flex: 0 0 100%; }
-  .photo-gallery::after { display: none; }
+  .photo-gallery { gap: .5rem; }
+  .photo-gallery-item { flex-basis: calc(var(--photo-ratio, 1.5) * 6rem); }
   .photo-viewer-navigation { flex-wrap: wrap; }
 }

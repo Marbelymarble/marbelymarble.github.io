@@ -61,8 +61,8 @@ description: Photographs by Mari Schnabel.
     <button type="button" data-photo-next>Next</button>
   </div>
 </dialog>
-<script src="{{ '/assets/photography.js' | relative_url }}" defer></script>
-{% if flickr_enabled %}<script src="{{ '/assets/flickr-album.js' | relative_url }}" defer></script>{% endif %}
+<script src="{{ '/assets/photography.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+{% if flickr_enabled %}<script src="{{ '/assets/flickr-album.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
 {% else %}
 <p>Photographs coming soon.</p>
 {% endif %}
